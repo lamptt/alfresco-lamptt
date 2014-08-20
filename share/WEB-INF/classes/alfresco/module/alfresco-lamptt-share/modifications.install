@@ -1,0 +1,16 @@
+add|/WEB-INF/lib/alfresco-lamptt-share.jar
+add|/WEB-INF/classes/alfresco/module/alfresco-lamptt-share/messages/lamptt.properties
+add|/WEB-INF/classes/alfresco/module/alfresco-lamptt-share/log4j.properties
+add|/WEB-INF/classes/alfresco/web-extension/site-data/template-instances/edit-metadata.xml
+add|/WEB-INF/classes/alfresco/web-extension/templates/org/alfresco/edit-metadata.ftl
+add|/WEB-INF/classes/alfresco/web-extension/alfresco-lamptt-share-context.xml
+mkdir|/WEB-INF/classes/alfresco/module/alfresco-lamptt-share/messages
+mkdir|/WEB-INF/classes/alfresco/module/alfresco-lamptt-share
+mkdir|/WEB-INF/classes/alfresco/module
+mkdir|/WEB-INF/classes/alfresco/web-extension/site-data/template-instances
+mkdir|/WEB-INF/classes/alfresco/web-extension/site-data
+mkdir|/WEB-INF/classes/alfresco/web-extension/templates/org/alfresco
+mkdir|/WEB-INF/classes/alfresco/web-extension/templates/org
+mkdir|/WEB-INF/classes/alfresco/web-extension/templates
+mkdir|/WEB-INF/classes/alfresco/web-extension
+mkdir|/WEB-INF/classes/alfresco
