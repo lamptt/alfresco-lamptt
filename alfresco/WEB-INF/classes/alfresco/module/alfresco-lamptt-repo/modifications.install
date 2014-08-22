@@ -25,6 +25,3 @@ mkdir|/WEB-INF/classes/alfresco/extension
 mkdir|/WEB-INF/classes/alfresco/module/alfresco-lamptt-repo/context
 mkdir|/WEB-INF/classes/alfresco/module/alfresco-lamptt-repo/messages
 mkdir|/WEB-INF/classes/alfresco/module/alfresco-lamptt-repo/model
-mkdir|/WEB-INF/classes/alfresco/module/alfresco-lamptt-repo
-mkdir|/WEB-INF/classes/alfresco/module
-mkdir|/WEB-INF/classes/alfresco
