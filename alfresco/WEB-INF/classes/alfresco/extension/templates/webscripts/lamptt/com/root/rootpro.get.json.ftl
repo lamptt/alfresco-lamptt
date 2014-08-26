@@ -10,6 +10,7 @@
 	"f name": "${f.properties.name}",
 	"length1": ${n1},
 	 <#list whitepapers1 as child1>
+		"c10_0": "<#if child1.whitepaper1.properties["sla:c10"]?exists>${child1.whitepaper1.properties["sla:c10"]}<#else>0</#if>"
 		"c11_0": "<#if child1.whitepaper1.properties["sla:c11"]?exists>${child1.whitepaper1.properties["sla:c11"]}<#else>0</#if>"
 		"c12_0": "<#if child1.whitepaper1.properties["sla:c12"]?exists>${child1.whitepaper1.properties["sla:c12"]}<#else>0</#if>"
 		"c13_0": "<#if child1.whitepaper1.properties["sla:c13"]?exists>${child1.whitepaper1.properties["sla:c13"]}<#else>0</#if>"
@@ -19,6 +20,7 @@
 		"c17_0": "<#if child1.whitepaper1.properties["sla:c17"]?exists>${child1.whitepaper1.properties["sla:c17"]}<#else>0</#if>"
 		<#list whitepapers as child>
 			{
+				"c20_0": "<#if child.whitepaper.properties["sla:c20"]?exists>${child.whitepaper.properties["sla:c20"]}<#else>0</#if>"
 				"c21_0": "<#if child.whitepaper.properties["sla:c21"]?exists>${child.whitepaper.properties["sla:c21"]}<#else>0</#if>"
 				"c22_0": "<#if child.whitepaper.properties["sla:c22"]?exists>${child.whitepaper.properties["sla:c22"]}<#else>0</#if>"
 				"c23_0": "<#if child.whitepaper.properties["sla:c23"]?exists>${child.whitepaper.properties["sla:c23"]}<#else>0</#if>"
@@ -34,12 +36,24 @@
 	"d1": "<#if f.properties["sla:d1"]?exists>${f.properties["sla:d1"]}<#else>0</#if>",
 	"f name": "${f.properties.name}",
 	 <#list Years as childYears>
-		"y1": "<#if childYears.year.properties["sla:y1"]?exists>${childYears.year.properties["sla:y1"]}<#else>0</#if>",
-		"y2": "<#if childYears.year.properties["sla:y2"]?exists>${childYears.year.properties["sla:y2"]}<#else>0</#if>"
+	 	"y0": "<#if childYears.year.properties["sla:dc1p0"]?exists>${childYears.year.properties["sla:dc1p0"]}<#else>0</#if>",
+		"y1": "<#if childYears.year.properties["sla:dc1p1"]?exists>${childYears.year.properties["sla:dc1p1"]}<#else>0</#if>"
 		<#list Months as childMonths>
 			{
-				"m1": "<#if childMonths.month.properties["sla:m1"]?exists>${childMonths.month.properties["sla:m1"]}<#else>0</#if>",
-				"m2": "<#if childMonths.month.properties["sla:m2"]?exists>${childMonths.month.properties["sla:m2"]}<#else>0</#if>"
+				"m0": "<#if childMonths.month.properties["sla:dc2p0"]?exists>${childMonths.month.properties["sla:dc2p0"]}<#else>0</#if>",
+				"m1": "<#if childMonths.month.properties["sla:dc2p1"]?exists>${childMonths.month.properties["sla:dc2p1"]}<#else>0</#if>"
+			}
+		</#list>
+	</#list>
+	
+	"Type-----------": "-------------Type"
+	"t1": "<#if f.properties["sla:t1"]?exists>${f.properties["sla:t1"]}<#else>0</#if>",
+	"f name": "${f.properties.name}",
+	 <#list TC1S as childTC1S>
+	 	"tc10": "<#if childTC1S.tc1.properties["sla:tc1p0"]?exists>${childTC1S.tc1.properties["sla:tc1p0"]}<#else>0</#if>"
+		<#list TC2S as childTC2S>
+			{
+				"tc20": "<#if childTC2S.tc2.properties["sla:tc2p0"]?exists>${childTC2S.tc2.properties["sla:tc2p0"]}<#else>0</#if>",
 			}
 		</#list>
 	</#list>

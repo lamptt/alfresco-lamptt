@@ -22,10 +22,12 @@
 			<title>child1</title>
 			<parent>sys:base</parent>
 			<properties>
+				<property name="sla:c10">
+					<type>d:text</type>
+				</property>
 				<property name="sla:c11">
 					<type>d:long</type>
 				</property>
-				
 				<property name="sla:c12">
 					<type>d:long</type>
 				</property>
@@ -67,10 +69,12 @@
 			<title>child2</title>
 			<parent>sys:base</parent>
 			<properties>
+				<property name="sla:c20">
+					<type>d:long</type>
+				</property>
 				<property name="sla:c21">
 					<type>d:long</type>
 				</property>
-				
 				<property name="sla:c22">
 					<type>d:long</type>
 				</property>
@@ -93,28 +97,27 @@
 		</type>
 		
 		<!-- count y and m -->>
-		<type name="sla:y">
+		<type name="sla:dc1">
 			<title>child1 - y</title>
 			<parent>sys:base</parent>
 			<properties>
-				<property name="sla:y1">
+				<property name="sla:dc1p0">
 					<type>d:long</type>
 				</property>
-				<property name="sla:y2">
+				<property name="sla:dc1p1">
 					<type>d:long</type>
 				</property>
-				
 			</properties>
 
 			<associations>
-				<child-association name="sla:ms">
+				<child-association name="sla:dc2s">
 					<title>c2s</title>
 					<source>
 						<mandatory>false</mandatory>
 						<many>true</many>
 					</source>
 					<target>
-						<class>sla:m</class>
+						<class>sla:dc2</class>
 						<mandatory>false</mandatory>
 						<many>true</many>
 					</target>
@@ -123,15 +126,52 @@
 		</type>
 		
 		
-		<type name="sla:m">
+		<type name="sla:dc2">
 			<title>child2 m</title>
 			<parent>sys:base</parent>
 			<properties>
-				<property name="sla:m1">
+				<property name="sla:dc2p0">
 					<type>d:long</type>
 				</property>
-				
-				<property name="sla:m2">
+				<property name="sla:dc2p1">
+					<type>d:long</type>
+				</property>
+			</properties>
+		</type>
+		
+		
+		<!-- count type -->>
+		<type name="sla:tc1">
+			<title>child1 - type</title>
+			<parent>sys:base</parent>
+			<properties>
+				<property name="sla:tc1p0">
+					<type>d:long</type>
+				</property>
+			</properties>
+
+			<associations>
+				<child-association name="sla:tc2s">
+					<title>c2s</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</source>
+					<target>
+						<class>sla:tc2</class>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</target>
+				</child-association>
+			</associations>
+		</type>
+		
+		
+		<type name="sla:tc2">
+			<title>child2 - properties</title>
+			<parent>sys:base</parent>
+			<properties>
+				<property name="sla:tc2p0">
 					<type>d:long</type>
 				</property>
 			</properties>
@@ -197,20 +237,45 @@
 			
 			
 			<associations>
-				<child-association name="sla:ys">
-					<title>c1s</title>
+				<child-association name="sla:dc1s">
+					<title>dc1s</title>
 					<source>
 						<mandatory>false</mandatory>
 						<many>true</many>
 					</source>
 					<target>
-						<class>sla:y</class>
+						<class>sla:dc1</class>
 						<mandatory>false</mandatory>
 						<many>true</many>
 					</target>
 				</child-association>
 			</associations>
+		</aspect>
+		
+		<!-- Definition count date -->
+		<aspect name="sla:counttype">
+			<title>count date</title>
+			<properties>
+				<property name="sla:t1">
+					<type>d:int</type>
+				</property>
+			</properties>
 			
+			
+			<associations>
+				<child-association name="sla:tc1s">
+					<title>tc1s</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</source>
+					<target>
+						<class>sla:tc1</class>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</target>
+				</child-association>
+			</associations>
 		</aspect>
 		
 	</aspects>

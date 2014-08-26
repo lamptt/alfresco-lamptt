@@ -27,14 +27,13 @@ function process(){
 		model.whitepapers1 = whitepaperInfo1;
 		
 		//Date
-		f = companyhome;
-		var ys = f.childAssocs["sla:ys"];
+		var ys = f.childAssocs["sla:dc1s"];
 		var YearInfo = new Array();
 		for(i = 0; i < ys.length; i++)
 		{
 			var year = new YearEntry(ys[i])
 			YearInfo[i] = year;
-			var ms = ys[i].childAssocs["sla:ms"];
+			var ms = ys[i].childAssocs["sla:dc2s"];
 			
 			var MonthInfo = new Array();
 			for (j = 0; j < ms.length; j++) {
@@ -44,6 +43,24 @@ function process(){
 			model.Months = MonthInfo;
 		}
 		model.Years = YearInfo;
+		
+		//type
+		var tc1s = f.childAssocs["sla:tc1s"];
+		var TC1Info = new Array();
+		for(i = 0; i < tc1s.length; i++)
+		{
+			var tc1 = new TC1Entry(tc1s[i])
+			TC1Info[i] = tc1;
+			var tc2s = tc1s[i].childAssocs["sla:tc2s"];
+			
+			var TC2Info = new Array();
+			for (j = 0; j < tc2s.length; j++) {
+				var tc2 = new TC2Entry(tc2s[j]);
+				TC2Info[j] = tc2;
+			}
+			model.TC2S = TC2Info;
+		}
+		model.TC1S = TC1Info;
 		
 		return model;	
 }
@@ -58,5 +75,11 @@ function MonthEntry(month) {
 }
 function YearEntry(year) {
     this.year = year;
+}
+function TC1Entry(tc1) {
+    this.tc1 = tc1;
+}
+function TC2Entry(tc2) {
+    this.tc2 = tc2;
 }
 main();
